@@ -15,8 +15,9 @@ jobs:
           username: aboogie
           password: fatboy24
       - name: Build and tag 
-        run: | 
-          docker build --quiet --no-cache --tag aboogie/getting-started:0.0.1 --file app/Dockerfile
+        run: |
+          cd app 
+          docker build --tag aboogie/getting-started:0.0.1 .
           docker push aboogie/getting-started:0.0.1
   # deploy: 
   #   runs-on: ubuntu-latest
