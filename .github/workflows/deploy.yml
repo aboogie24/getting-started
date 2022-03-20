@@ -1,0 +1,26 @@
+name: Build and deploy 
+
+on: push
+
+
+jobs: 
+  build: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout Code 
+        uses:  actions/checkout@v2 
+      - name: Login to Docker hub 
+        uses: docker/login@v1 
+        with:  
+          username: aboogie
+          password: fatboy24
+      - name: Build and tag 
+        run: | 
+          docker image build --quiet --no-cache --tag getting-started/getting-started:0.0.1 --file app/app/Dockerfile
+          docker image push getting-started/getting-started:0.0.1
+  # deploy: 
+  #   runs-on: ubuntu-latest
+  #   steps: 
+  #     - name: 
+
+
