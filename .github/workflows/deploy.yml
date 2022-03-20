@@ -16,7 +16,7 @@ jobs:
           password: fatboy24
       - name: Build and tag 
         run: | 
-          docker image build --quiet --no-cache --tag aboogie/getting-started:0.0.1 --file app/app/Dockerfile
+          docker image build --quiet --no-cache --tag aboogie/getting-started:0.0.1 --file app/Dockerfile
           docker image push aboogie/getting-started:0.0.1
   # deploy: 
   #   runs-on: ubuntu-latest
