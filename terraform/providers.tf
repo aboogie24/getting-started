@@ -12,7 +12,7 @@ terraform {
 
 provider "aws" {
     region = var.region
-    access_key = "" 
-    secret_key = "" 
+    access_key =  {{ env("ACCESS_KEY") }}
+    secret_key =  {{ env("SECRET_KEY") }}
   
 }

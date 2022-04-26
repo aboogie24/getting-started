@@ -12,6 +12,12 @@ jobs:
         uses: hashicorp/setup-terraform@v2 
         with: 
           terraform_version: 1.1.9 
+      - name: T init 
+        env: 
+          AWS_ACCESS_KEY_ID: ${{ secret.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secret.AWS_SECRET_KEY}}
+        run: | 
+          ls 
       - name: See Output 
         id: Output
         run: | 
