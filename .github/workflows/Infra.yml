@@ -15,7 +15,7 @@ jobs:
       - name: See Output 
         id: Output
         run: | 
-          cd 
+          ls
           terraform -version 
       
           
