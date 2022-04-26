@@ -18,7 +18,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY}}
         run: | 
           cd terraform 
-          terraform init 
+          terraform -chdir=terraform/ init 
       - name: See Output 
         id: Output
         env: 
@@ -26,7 +26,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY}}
         run: | 
           cd terraform 
-          terraform plan 
+          terraform -chdir=terraform/ plan 
       - name: Terraform Apply
         id: apply
         env: 
@@ -34,7 +34,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY}}
         run: | 
           cd terraform 
-          terraform apply --auto-approve
+          terraform apply -chdir=terraform/ --auto-approve
           
       
           
