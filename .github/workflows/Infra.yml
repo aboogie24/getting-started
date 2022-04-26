@@ -1,0 +1,21 @@
+name: Build and deploy 
+
+on: push
+
+jobs: 
+  Infra: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout apiVersion
+        uses: actions/checkout@v3
+      - name: Setup Terraform 
+        uses: hashicorp/setup-terraform@v2 
+        with: 
+          terraform_version: 1.1.9 
+      - name: See Output 
+        id: Output
+        run: | 
+          cd 
+          terraform -version 
+      
+          
